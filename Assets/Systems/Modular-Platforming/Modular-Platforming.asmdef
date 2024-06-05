@@ -1,0 +1,18 @@
+{
+    "name": "Modular-Platforming",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cc143452381cb3141ac7f2617a412f61",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:c1cf10c5b310bbb4d9a4ff7f29d15dd0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
