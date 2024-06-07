@@ -12,6 +12,7 @@ namespace AuctionChurch.Interaction.Holding
 
         [Header("Positioning")]
         [SerializeField] private bool _drawGizmos = true;
+        [SerializeField] private Transform _itemParent;
         [SerializeField] private Vector3 _holdOffset;
         private HoldableObject _heldItem;
 
@@ -34,8 +35,8 @@ namespace AuctionChurch.Interaction.Holding
             _heldItem = item;
 
             item.IsHeld = true;
-            item.transform.parent = transform;
-            item.transform.localPosition = _holdOffset;
+            item.transform.parent = _itemParent;
+            item.transform.SetLocalPositionAndRotation(_holdOffset, Quaternion.identity);
         }
 
         public void Drop(InputAction.CallbackContext ctx)
@@ -51,11 +52,11 @@ namespace AuctionChurch.Interaction.Holding
 
         private void OnDrawGizmosSelected()
         {
-            if (!_drawGizmos)
+            if (!_drawGizmos || _itemParent == null)
                 return;
 
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.TransformPoint(_holdOffset), 0.35f);
+            Gizmos.DrawWireSphere(_itemParent.TransformPoint(_holdOffset), 0.35f);
         }
     }
 }

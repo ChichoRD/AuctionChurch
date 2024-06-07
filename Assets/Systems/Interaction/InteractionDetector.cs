@@ -13,7 +13,7 @@ namespace AuctionChurch.Interaction
             _detector = GetComponent<RayDetector>();
         }
 
-        public IInteractable Detect()
+        public IInteractable[] Detect()
         {
             if (_detector.Detect() == 0)
                 return null;
@@ -23,7 +23,7 @@ namespace AuctionChurch.Interaction
             if (hit == null)
                 return null;
 
-            return hit.GetComponent<IInteractable>();
+            return hit.GetComponents<IInteractable>();
         }
     }
 }

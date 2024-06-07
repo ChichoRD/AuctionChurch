@@ -32,10 +32,13 @@ namespace AuctionChurch.Interaction
 
         public void TryInteract(InputAction.CallbackContext context)
         {
-            IInteractable interactable = _detector.Detect();
+            IInteractable[] interactables = _detector.Detect();
 
-            if (interactable != null) 
-                Interact(interactable);
+            if (interactables == null)
+                return;
+
+            for (int i = 0; i < interactables.Length; i++)
+                Interact(interactables[i]);
         }
 
         void IInteractor<HoldableObject>.Interact(HoldableObject interactable)

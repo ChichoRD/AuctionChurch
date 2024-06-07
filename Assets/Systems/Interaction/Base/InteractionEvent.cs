@@ -11,6 +11,8 @@ namespace AuctionChurch.Interaction
 
         public void Accept(IInteractor interactor)
         {
+            Debug.Log("event fired!");
+
             _unityEvent.Invoke();
             interactor.Interact(this);
         }
