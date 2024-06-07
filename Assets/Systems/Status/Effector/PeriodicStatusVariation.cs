@@ -27,10 +27,16 @@ namespace StatusSystem.Effector
 
         private void Start()
         {
-            _ = _beginOnStart && TryStartAugmentingStatus();
+            _ = _beginOnStart && TryStartVaryingStatus();
         }
 
-        public bool TryStopAugmentingStatus()
+        public void StopVaryingStatus() =>
+            TryStopVaryingStatus();
+
+        public void StartVaryingStatus() =>
+            TryStartVaryingStatus();
+
+        public bool TryStopVaryingStatus()
         {
             if (_augmentStatusCoroutine != null)
             {
@@ -42,7 +48,7 @@ namespace StatusSystem.Effector
             return false;
         }
 
-        public bool TryStartAugmentingStatus()
+        public bool TryStartVaryingStatus()
         {
             if (_augmentStatusCoroutine == null)
             {
