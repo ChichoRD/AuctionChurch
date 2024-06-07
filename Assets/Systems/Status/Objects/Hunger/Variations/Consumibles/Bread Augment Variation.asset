@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a7ac1c76c1f7a48acee721f4ed073e, type: 3}
   m_Name: Bread Augment Variation
   m_EditorClassIdentifier: 
-  _defaultVariation: 0
+  _defaultVariation: 18
+  <VariationApplied>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
