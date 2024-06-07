@@ -3,27 +3,25 @@ using UnityEngine;
 
 namespace StatusSystem.Effector
 {
-    public class PeriodicStatusAugmenter : MonoBehaviour
+    public class PeriodicStatusVariation : MonoBehaviour
     {
         [SerializeField]
         [Min(0.0f)]
         private float _updateIntervalSeconds = 1.0f;
         private WaitForSeconds _updateIntervalWait;
-
-        [SerializeField]
-        private float _defaultVariation = 0.0f;
-        public float Variation { get; set; }
+        private Coroutine _augmentStatusCoroutine;
 
         [field: SerializeField]
-        public ClampedStatus Status { get; private set; }
+        public StatusVariation Variation { get; set; }
+
+        [field: SerializeField]
+        public ClampedStatus Status { get; set; }
 
         [SerializeField]
         private bool _beginOnStart = true;
-        private Coroutine _augmentStatusCoroutine;
 
         private void Awake()
         {
-            Variation = _defaultVariation;
             _updateIntervalWait = new WaitForSeconds(_updateIntervalSeconds);
         }
 
@@ -59,7 +57,7 @@ namespace StatusSystem.Effector
         {
             while (enabled)
             {
-                Status.Value += Variation;
+                Variation.Vary(Status);
                 yield return _updateIntervalWait;
             }
         }

@@ -806,6 +806,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 447948218}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1206004090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1206004092}
+  - component: {fileID: 1206004091}
+  - component: {fileID: 1206004093}
+  m_Layer: 0
+  m_Name: Status Depletioner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1206004091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206004090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5093006bd1a7d65449634d7c8afc441b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _updateIntervalSeconds: 1
+  <Variation>k__BackingField: {fileID: 11400000, guid: 7beaa6e6f6198914ba38ebfa8fb30203,
+    type: 2}
+  <Status>k__BackingField: {fileID: 11400000, guid: 1386fdfc2d9474c408ce6303ef741ec5,
+    type: 2}
+  _beginOnStart: 1
+--- !u!4 &1206004092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206004090}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1206004093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206004090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1404e40f03e304a9e70c3accbf5ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clampedStatus: {fileID: 11400000, guid: 1386fdfc2d9474c408ce6303ef741ec5, type: 2}
+  <ValueReachedMinThreshold>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <ValueReachedMaxThreshold>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <ValueSet>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1244800466
 PrefabInstance:
   m_ObjectHideFlags: 0

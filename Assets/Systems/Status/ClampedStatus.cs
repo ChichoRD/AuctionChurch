@@ -42,6 +42,8 @@ namespace StatusSystem
         [field: SerializeField]
         public UnityEvent<float> ValueReachedMaxThreshold { get; private set; }
 
+        public UnityEvent<float> ValueSet => _status.ValueSet;
+
         private void OnEnable()
         {
             ValueReachedMinThreshold ??= new UnityEvent<float>();
