@@ -5,13 +5,14 @@ using UnityEngine.Events;
 
 namespace AuctionChurch.Interaction
 {
-    public class InteractionEvent : Interactable
+    public class InteractionEvent : MonoBehaviour, IInteractable
     {
         [SerializeField] private UnityEvent _unityEvent;
 
-        public override void Interact()
+        public void Accept(IInteractor interactor)
         {
             _unityEvent.Invoke();
+            interactor.Interact(this);
         }
     }
 }

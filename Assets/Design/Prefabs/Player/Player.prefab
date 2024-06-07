@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9494862}
   - component: {fileID: 9494863}
+  - component: {fileID: 797882094}
+  - component: {fileID: 797882093}
   m_Layer: 0
   m_Name: Interaction
   m_TagString: Untagged
@@ -30,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1404336546}
+  - {fileID: 746799584}
   m_Father: {fileID: 5614308316433727365}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,8 +48,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0481b58c3f1ad644581519050eaffac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionActionReference: {fileID: -6637065567358644693, guid: 1e99aa7ee60adc54a96bddff415dca27,
+  _interactionInput: {fileID: -6637065567358644693, guid: 1e99aa7ee60adc54a96bddff415dca27,
     type: 3}
+--- !u!1773428102 &797882094
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9494861}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffsets: []
+  m_RotationOffsets: []
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 0
+  m_Sources: []
+--- !u!114 &797882093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9494861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb05f640a4a5764db3b88e672627243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &746799583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746799584}
+  - component: {fileID: 746799585}
+  m_Layer: 0
+  m_Name: Held Item
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &746799584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746799583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9494862}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &746799585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746799583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fc63a6f15c38047aa2cac5c70f8556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropInput: {fileID: 4344467740125944566, guid: 1e99aa7ee60adc54a96bddff415dca27,
+    type: 3}
+  _drawGizmos: 1
+  _holdOffset: {x: 0.5, y: -0.25, z: 0.5}
 --- !u!1 &1404336545
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,8 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1404336546}
   - component: {fileID: 1404336550}
-  - component: {fileID: 1404336548}
-  - component: {fileID: 1404336549}
+  - component: {fileID: 4091222358607294084}
   m_Layer: 0
   m_Name: Interaction Detector
   m_TagString: Untagged
@@ -93,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a8f6f8a0151b046a1d7403bdbb658f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1404336548
+--- !u!114 &4091222358607294084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,44 +186,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404336545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705d6902763717447bdad157f3ccfe4c, type: 3}
+  m_Script: {fileID: 11500000, guid: a22328af9e30c6345bc1bcd1417a546e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   drawGizmos: 1
-  gizmosColor: {r: 0, g: 0.77227974, b: 1, a: 1}
+  gizmosColor: {r: 0, g: 0.508142, b: 1, a: 1}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
   detectTriggers: 1
   localOffset: 1
-  offset: {x: 0, y: 0.5, z: 1.25}
-  radius: 1
---- !u!1773428102 &1404336549
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404336545}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffsets:
-  - {x: 0, y: -0.75, z: 0}
-  m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 0
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1
+  offset: {x: 0, y: 0, z: 0}
+  range: 2
+  direction: {x: 0, y: 0, z: 1}
 --- !u!1 &2072918604845154174
 GameObject:
   m_ObjectHideFlags: 0
