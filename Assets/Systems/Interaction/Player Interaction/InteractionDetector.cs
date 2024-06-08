@@ -1,4 +1,5 @@
 using SH.AreaDetection;
+using System;
 using UnityEngine;
 
 namespace AuctionChurch.Interaction
@@ -16,12 +17,12 @@ namespace AuctionChurch.Interaction
         public IInteractable[] Detect()
         {
             if (_detector.Detect() == 0)
-                return null;
+                return Array.Empty<IInteractable>();
 
             Collider hit = _detector.GetHit();
 
             if (hit == null)
-                return null;
+                return Array.Empty<IInteractable>();
 
             return hit.GetComponents<IInteractable>();
         }
