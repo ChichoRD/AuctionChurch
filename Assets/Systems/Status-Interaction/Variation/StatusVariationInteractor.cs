@@ -24,12 +24,14 @@ namespace StatusInteractionSystem.Variation
 
         private void OnEnable()
         {
-            _variationInputActionReference.action.Enable();
+            if (!_variationInputActionReference.action.enabled)
+                _variationInputActionReference.action.Enable();
         }
 
         private void OnDisable()
         {
-            _variationInputActionReference.action.Disable();
+            if (_variationInputActionReference.action.enabled)
+                _variationInputActionReference.action.Disable();
         }
 
         private void OnDestroy()

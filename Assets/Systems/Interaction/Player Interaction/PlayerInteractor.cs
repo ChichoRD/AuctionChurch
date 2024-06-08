@@ -17,13 +17,15 @@ namespace AuctionChurch.Interaction
 
         private void OnEnable()
         {
-            _interactionInput.action.Enable();
+            if (!_interactionInput.action.enabled)
+                _interactionInput.action.Enable();
             _interactionInput.action.performed += TryInteract;
         }
 
         private void OnDisable()
         {
-            _interactionInput.action.Disable();
+            if (_interactionInput.action.enabled)
+                _interactionInput.action.Disable();
             _interactionInput.action.performed -= TryInteract;
         }
 
