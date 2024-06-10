@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace AuctionChurch.Interaction
@@ -24,6 +25,8 @@ namespace AuctionChurch.Interaction
 
     public abstract class Interactor : MonoBehaviour
     {
+        public Action<IInteractable> OnInteract;
+
         // concrete wrapper for a specific visitor
         private class InteractorWrapper : IInteractor
         {
@@ -51,6 +54,7 @@ namespace AuctionChurch.Interaction
 
         protected void Interact(IInteractable interactable)
         {
+            OnInteract?.Invoke(interactable);
             interactable.Accept(GeneralInteractor);
         }
     }

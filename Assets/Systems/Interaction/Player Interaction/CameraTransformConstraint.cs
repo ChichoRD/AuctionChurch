@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class CameraTransformConstraint : MonoBehaviour
+namespace AuctionChurch.UtilComponents.Transforms
 {
-    private Transform parent;
-
-    private void Awake()
+    public class CameraTransformConstraint : MonoBehaviour
     {
-        parent = Camera.main.transform;
-    }
+        private Transform parent;
 
-    private void LateUpdate()
-    {
-        transform.SetPositionAndRotation(parent.position, parent.rotation);
+        private void Awake()
+        {
+            parent = Camera.main.transform;
+        }
+
+        private void LateUpdate()
+        {
+            transform.SetPositionAndRotation(parent.position, parent.rotation);
+        }
     }
 }

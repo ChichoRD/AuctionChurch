@@ -1,19 +1,16 @@
-using SH.AreaDetection;
+using AuctionChurch.Interaction.Detection;
+using AuctionChurch.Interaction.Holding;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace AuctionChurch.Interaction
 {
-    public class PlayerInteractor : Interactor
+    public class PlayerInteractor : Interactor, IInteractor<HoldableObject>
     {
+        [Header("References")]
         [SerializeField] private InputActionReference _interactionInput;
-        private InteractionDetector _detector;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            _detector = GetComponentInChildren<InteractionDetector>();
-        }
+        [SerializeField] private InteractionDetector _detector;
+        [SerializeField] private ObjectHolder _objectHolder;
 
         private void OnEnable()
         {
@@ -38,6 +35,11 @@ namespace AuctionChurch.Interaction
 
             for (int i = 0; i < interactables.Length; i++)
                 Interact(interactables[i]);
+        }
+
+        public void Interact(HoldableObject interactable)
+        {
+            _objectHolder.Hold(interactable);
         }
     }
 }

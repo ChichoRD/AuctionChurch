@@ -1,4 +1,5 @@
 using AuctionChurch.Interaction;
+using AuctionChurch.Interaction.Detection;
 using StatusSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;

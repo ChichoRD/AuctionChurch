@@ -2,19 +2,18 @@ using SH.AreaDetection;
 using System;
 using UnityEngine;
 
-namespace AuctionChurch.Interaction
+namespace AuctionChurch.Interaction.Detection
 {
-    [RequireComponent(typeof(RayDetector))]
-    public class InteractionDetector : MonoBehaviour
+    public class PhysicsInteractionDetector : InteractionDetector
     {
-        private RayDetector _detector;
+        [SerializeField] private AreaDetector _detector;
 
         private void Awake()
         {
             _detector = GetComponent<RayDetector>();
         }
 
-        public IInteractable[] Detect()
+        public override IInteractable[] Detect()
         {
             if (_detector.Detect() == 0)
                 return Array.Empty<IInteractable>();
