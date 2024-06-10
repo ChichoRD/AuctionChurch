@@ -13,6 +13,7 @@ namespace AuctionChurch.Interaction.Holding
 
         public Action<HoldableObject> OnHold { get; set; }
         public Action<HoldableObject> OnRelease { get; set; }
+        public Action OnObjectRemoved { get; set; }
         public HoldableObject HeldObject { get; private set; }
 
         private void OnEnable()
@@ -49,6 +50,17 @@ namespace AuctionChurch.Interaction.Holding
 
             HeldObject.transform.parent = _previousParent;
             OnRelease?.Invoke(HeldObject);
+            HeldObject.Release();
+            HeldObject = null;
+        }
+
+        public void RemoveObject()
+        {
+            if (HeldObject == null)
+                return;
+
+            HeldObject.transform.parent = _previousParent;
+            OnObjectRemoved?.Invoke();
             HeldObject.Release();
             HeldObject = null;
         }

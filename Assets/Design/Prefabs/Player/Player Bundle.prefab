@@ -132,7 +132,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _objectPlacer
       value: 
-      objectReference: {fileID: 6695438423471804337}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1404336550, guid: b59d9e0cceeef1e41b090c6c372c7dd6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b59d9e0cceeef1e41b090c6c372c7dd6, type: 3}
@@ -164,18 +164,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3f0db21489dba94185889e4db7af377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6695438423471804337 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4612633873998626803, guid: b59d9e0cceeef1e41b090c6c372c7dd6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2083380833692348482}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c2a2733cd99d74d8fd8fd7d8ed9916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7091260416949154391 stripped
