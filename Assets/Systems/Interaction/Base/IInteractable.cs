@@ -25,11 +25,10 @@ namespace AuctionChurch.Interaction
 
     public abstract class Interactor : MonoBehaviour
     {
-        public Action<IInteractable> OnInteract;
-
         // concrete wrapper for a specific visitor
         private class InteractorWrapper : IInteractor
         {
+            public Action<IInteractable> OnInteract;
             private readonly object _specificInteractor;
 
             public InteractorWrapper(object specificInteractor)
@@ -41,21 +40,41 @@ namespace AuctionChurch.Interaction
             {
                 IInteractor<T> i = _specificInteractor as IInteractor<T>;
 
+                OnInteract?.Invoke(interactable);
                 i?.Interact(interactable);
             }
         }
 
-        public IInteractor GeneralInteractor { get; private set; }
+        public Action<IInteractable> OnInteract;
 
-        protected virtual void Awake()
+        public IInteractor GeneralInteractor
         {
-            GeneralInteractor = new InteractorWrapper(this);
+            get
+            {
+                _generalInteractor ??= new InteractorWrapper(this);
+
+                return _generalInteractor;
+            }
+        }
+        private InteractorWrapper _generalInteractor;
+
+        protected virtual void OnEnable()
+        {
+            _generalInteractor ??= new InteractorWrapper(this);
+
+            _generalInteractor.OnInteract += RaiseEvent;
+        }
+
+        protected virtual void OnDisable()
+        {
+            _generalInteractor.OnInteract -= RaiseEvent;
         }
 
         protected void Interact(IInteractable interactable)
         {
-            OnInteract?.Invoke(interactable);
             interactable.Accept(GeneralInteractor);
         }
+
+        private void RaiseEvent(IInteractable interactable) => OnInteract?.Invoke(interactable);
     }
 }

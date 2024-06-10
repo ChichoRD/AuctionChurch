@@ -1,7 +1,6 @@
 using AuctionChurch.UtilComponents.Physics;
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace AuctionChurch.Interaction.Holding
@@ -41,10 +40,9 @@ namespace AuctionChurch.Interaction.Holding
                 return;
 
             HeldObject = obj;
-            HeldObject.Hold();
 
             RecordObject();
-            AttachObjectToParent();
+            UpdateObject();
 
             OnHold?.Invoke();
         }
@@ -65,17 +63,17 @@ namespace AuctionChurch.Interaction.Holding
             OnRelease?.Invoke();
         }
 
+        private void UpdateObject()
+        {
+            _layerSwitcher.SwitchLayer(_heldLayerMask);
+            HeldObject.transform.parent = _objectParent;
+            HeldObject.Hold();
+        }
+
         private void RecordObject()
         {
             _previousParent = HeldObject.transform.parent;
             _layerSwitcher.RecordObject(HeldObject.gameObject);
-        }
-
-        private void AttachObjectToParent()
-        {
-            _layerSwitcher.SwitchLayer(_heldLayerMask);
-            HeldObject.transform.parent = _objectParent;
-            HeldObject.transform.SetLocalPositionAndRotation(HeldObject.HeldPositionOffset, HeldObject.HeldRotationOffset);
         }
 
         private void ResolveReleasePosition()

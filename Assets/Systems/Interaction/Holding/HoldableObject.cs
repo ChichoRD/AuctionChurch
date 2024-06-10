@@ -7,13 +7,6 @@ namespace AuctionChurch.Interaction.Holding
 {
     public class HoldableObject : MonoBehaviour, IInteractable
     {
-        [Header("Held Offsets")]
-        [SerializeField] private Vector3 _heldPositionOffset;
-        [SerializeField] private Vector3 _heldRotationOffset;
-
-        public Vector3 HeldPositionOffset => _heldPositionOffset;
-        public Quaternion HeldRotationOffset => Quaternion.Euler(_heldRotationOffset);
-
         [Header("Events")]
         [SerializeField] private UnityEvent _onHold;
         [SerializeField] private UnityEvent _onRelease;

@@ -17,20 +17,23 @@ namespace StatusInteractionSystem.Variation
         [SerializeField]
         private InputActionReference _variationInputActionReference;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             _variationInputActionReference.action.performed += OnVariationInputPerformed;
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             if (!_variationInputActionReference.action.enabled)
                 _variationInputActionReference.action.Enable();
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
+
             if (_variationInputActionReference.action.enabled)
                 _variationInputActionReference.action.Disable();
         }

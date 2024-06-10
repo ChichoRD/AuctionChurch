@@ -11,10 +11,10 @@ namespace AuctionChurch.Interaction.Holding
 
         public void PlaceObject(Transform obj)
         {
-            obj.position = GetPlacementPosition();
+            obj.position = GetPlacementPosition(obj);
         }
 
-        private Vector3 GetPlacementPosition()
+        private Vector3 GetPlacementPosition(Transform obj)
         {
             Transform cam = Camera.main.transform;
             Ray ray = new(cam.position, cam.forward);
@@ -24,7 +24,23 @@ namespace AuctionChurch.Interaction.Holding
             if (hit.transform == null)
                 return cam.transform.position + ray.direction * _placementRange;
 
-            return hit.point;
+            return GetPositionOutsideColliders(obj, hit);
+        }
+
+        private Vector3 GetPositionOutsideColliders(Transform obj, RaycastHit hit)
+        {
+            Collider objCollider = obj.GetComponent<Collider>();
+            Collider hitCollider = hit.collider;
+            Transform hitTransform = hit.transform;
+
+            bool validComputation = Physics.ComputePenetration(objCollider, hit.point, obj.rotation,
+                                            hitCollider, hitTransform.position, hitTransform.rotation,
+                                            out Vector3 direction, out float distance);
+
+            if (validComputation)
+                return hit.point + (direction * distance);
+            else
+                return hit.point;
         }
 
         private void OnDrawGizmosSelected()

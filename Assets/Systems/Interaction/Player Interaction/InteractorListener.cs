@@ -23,6 +23,11 @@ namespace AuctionChurch.Interaction
             _interactor.OnInteract -= (IInteractable interactable) => RaiseEvents();
         }
 
-        private void RaiseEvents() => _event.Invoke();
+        private void RaiseEvents()
+        {
+            Debug.Log("raise events");
+
+            _event.Invoke();
+        }
     }
 }

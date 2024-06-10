@@ -12,17 +12,23 @@ namespace AuctionChurch.Interaction
         [SerializeField] private InteractionDetector _detector;
         [SerializeField] private ObjectHolder _objectHolder;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             if (!_interactionInput.action.enabled)
                 _interactionInput.action.Enable();
+
             _interactionInput.action.performed += TryInteract;
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
+
             if (_interactionInput.action.enabled)
                 _interactionInput.action.Disable();
+
             _interactionInput.action.performed -= TryInteract;
         }
 

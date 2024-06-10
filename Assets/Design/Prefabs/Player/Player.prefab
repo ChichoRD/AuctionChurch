@@ -400,7 +400,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _holder: {fileID: 9115444058387120661}
   _animator: {fileID: 0}
-  _animationParameter: isHolding
+  _isHoldingAnimationParameter: isHolding
+  _grabAnimationParameter: grab
 --- !u!1001 &5879400929356527080
 PrefabInstance:
   m_ObjectHideFlags: 0

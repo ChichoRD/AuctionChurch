@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace AuctionChurch.Interaction.Holding
 {
@@ -12,12 +9,15 @@ namespace AuctionChurch.Interaction.Holding
 
         [Header("Animation")]
         [SerializeField] private Animator _animator;
-        [SerializeField] private string _animationParameter;
-        private int _animationParameterHash;
+        [SerializeField] private string _isHoldingAnimationParameter;
+        [SerializeField] private string _grabAnimationParameter;
+        private int _isHoldingHash;
+        private int _grabHash;
 
         private void OnEnable()
         {
-            _animationParameterHash = Animator.StringToHash(_animationParameter);
+            _isHoldingHash = Animator.StringToHash(_isHoldingAnimationParameter);
+            _grabHash = Animator.StringToHash(_grabAnimationParameter);
 
             _holder.OnHold += OnHold;
             _holder.OnRelease += OnRelease;
@@ -31,12 +31,14 @@ namespace AuctionChurch.Interaction.Holding
 
         private void OnHold()
         {
-            _animator.SetBool(_animationParameterHash, true);
+            _animator.SetTrigger(_grabHash);
+            _animator.SetBool(_isHoldingHash, true);
         }
 
         private void OnRelease() 
         {
-            _animator.SetBool(_animationParameterHash, false);
+            _animator.SetTrigger(_grabHash);
+            _animator.SetBool(_isHoldingHash, false);
         }
     }
 }
