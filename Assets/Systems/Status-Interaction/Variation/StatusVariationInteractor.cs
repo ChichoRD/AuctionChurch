@@ -22,18 +22,14 @@ namespace StatusInteractionSystem.Variation
             _variationInputActionReference.action.performed += OnVariationInputPerformed;
         }
 
-        protected override void OnEnable()
+        private void OnEnable()
         {
-            base.OnEnable();
-
             if (!_variationInputActionReference.action.enabled)
                 _variationInputActionReference.action.Enable();
         }
 
-        protected override void OnDisable()
+        private void OnDisable()
         {
-            base.OnDisable();
-
             if (_variationInputActionReference.action.enabled)
                 _variationInputActionReference.action.Disable();
         }

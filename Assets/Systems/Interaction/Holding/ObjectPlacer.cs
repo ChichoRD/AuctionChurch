@@ -9,9 +9,10 @@ namespace AuctionChurch.Interaction.Holding
         [SerializeField] private bool _drawGizmos = true;
         [SerializeField] private float _placementRange;
 
-        public void PlaceObject(Transform obj)
+        public void PlaceObject(GameObject obj)
         {
-            obj.position = GetPlacementPosition(obj);
+            obj.transform.position = GetPlacementPosition(obj.transform);
+            obj.transform.rotation = Quaternion.identity;
         }
 
         private Vector3 GetPlacementPosition(Transform obj)

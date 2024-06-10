@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: FPSViewTransparentsLessEqual
-    Event: 300
+    Event: 500
     filterSettings:
       RenderQueueType: 1
       LayerMask:
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: FPSViewTransparentsAllDepth
-    Event: 500
+    Event: 300
     filterSettings:
       RenderQueueType: 1
       LayerMask:

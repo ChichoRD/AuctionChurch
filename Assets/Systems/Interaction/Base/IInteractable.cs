@@ -45,7 +45,16 @@ namespace AuctionChurch.Interaction
             }
         }
 
-        public Action<IInteractable> OnInteract;
+        public Action<IInteractable> OnInteract
+        {
+            get
+            {
+                _generalInteractor ??= new InteractorWrapper(this);
+
+                return _generalInteractor.OnInteract;
+            }
+            set => _generalInteractor.OnInteract = value;
+        }
 
         public IInteractor GeneralInteractor
         {
@@ -58,23 +67,9 @@ namespace AuctionChurch.Interaction
         }
         private InteractorWrapper _generalInteractor;
 
-        protected virtual void OnEnable()
-        {
-            _generalInteractor ??= new InteractorWrapper(this);
-
-            _generalInteractor.OnInteract += RaiseEvent;
-        }
-
-        protected virtual void OnDisable()
-        {
-            _generalInteractor.OnInteract -= RaiseEvent;
-        }
-
         protected void Interact(IInteractable interactable)
         {
             interactable.Accept(GeneralInteractor);
         }
-
-        private void RaiseEvent(IInteractable interactable) => OnInteract?.Invoke(interactable);
     }
 }

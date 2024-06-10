@@ -188,7 +188,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395259925060777950}
-  - component: {fileID: 4612633873998626803}
   - component: {fileID: 5432702138450313796}
   m_Layer: 0
   m_Name: Held Object Handler
@@ -212,20 +211,6 @@ Transform:
   m_Father: {fileID: 3505951885026149345}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4612633873998626803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111438282945825259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c2a2733cd99d74d8fd8fd7d8ed9916, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _drawGizmos: 1
-  _placementRange: 3
 --- !u!114 &5432702138450313796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972b7017130425b498b1b0c24d0a687c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5614308316433727364
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +306,194 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 5614308316433727368}
+--- !u!1 &6881155201104691213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461428699306090360}
+  - component: {fileID: 8822267118437536431}
+  - component: {fileID: 8780346106922668691}
+  m_Layer: 0
+  m_Name: Object Holder Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461428699306090360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881155201104691213}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3505951885026149345}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8822267118437536431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881155201104691213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01429a1a6a5ecbc42b4ae417a6d245d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+--- !u!114 &8780346106922668691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881155201104691213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa93b5e65a5ed14f8381f98e17afeb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _holder: {fileID: 9115444058387120661}
+  _onHold:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8822267118437536431}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+          Interaction
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grab
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8822267118437536431}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+          Interaction
+        m_MethodName: SetBoolTrue
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isHolding
+          m_BoolArgument: 0
+        m_CallState: 2
+  _gameObjectOnHold:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5432702138450313796}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Physics.LayerSwitcher,
+          Interaction
+        m_MethodName: RecordObject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5432702138450313796}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Physics.LayerSwitcher,
+          Interaction
+        m_MethodName: SwitchLayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8822267118437536431}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+          Interaction
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grab
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8822267118437536431}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+          Interaction
+        m_MethodName: SetBoolFalse
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isHolding
+          m_BoolArgument: 0
+        m_CallState: 2
+  _gameObjectOnRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5432702138450313796}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Physics.LayerSwitcher,
+          Interaction
+        m_MethodName: RestoreObjectLayers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5432702138450313796}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Physics.LayerSwitcher,
+          Interaction
+        m_MethodName: ClearObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1183063313155429475}
+        m_TargetAssemblyTypeName: AuctionChurch.Interaction.Holding.ObjectPlacer,
+          Interaction
+        m_MethodName: PlaceObject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8082722610051627622
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +505,7 @@ GameObject:
   - component: {fileID: 3505951885026149345}
   - component: {fileID: 9115444058387120661}
   - component: {fileID: 7609408499790428559}
-  - component: {fileID: 463372276860704787}
+  - component: {fileID: 1183063313155429475}
   m_Layer: 0
   m_Name: Object Holder
   m_TagString: Untagged
@@ -350,6 +526,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7395259925060777950}
+  - {fileID: 461428699306090360}
   m_Father: {fileID: 9494862}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -368,11 +545,7 @@ MonoBehaviour:
   _dropInput: {fileID: 4344467740125944566, guid: 1e99aa7ee60adc54a96bddff415dca27,
     type: 3}
   _objectParent: {fileID: 0}
-  _objectPlacer: {fileID: 4612633873998626803}
-  _heldLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _layerSwitcher: {fileID: 5432702138450313796}
+  _objectPlacer: {fileID: 0}
 --- !u!114 &7609408499790428559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectHolder: {fileID: 9115444058387120661}
---- !u!114 &463372276860704787
+--- !u!114 &1183063313155429475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,13 +568,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8082722610051627622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff9467ee91e61b245b18348068418728, type: 3}
+  m_Script: {fileID: 11500000, guid: d0c2a2733cd99d74d8fd8fd7d8ed9916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holder: {fileID: 9115444058387120661}
-  _animator: {fileID: 0}
-  _isHoldingAnimationParameter: isHolding
-  _grabAnimationParameter: grab
+  _drawGizmos: 1
+  _placementRange: 3
 --- !u!1001 &5879400929356527080
 PrefabInstance:
   m_ObjectHideFlags: 0

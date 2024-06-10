@@ -8,57 +8,60 @@ namespace AuctionChurch.UtilComponents.Physics
 {
     // A simple component for recording an object's original layers and switching an object and all of its children's layers.
     // To use:
-    // 1. Record an object's original layers with RecordObject
-    // 2. Set a new layer for the object and its children with SwitchLayer
-    // 3. Restore the object's layers with RestoreObjectLayers
+    // 1. Set LayerMask to the desired layer
+    // 2. Record an object's original layers with RecordObject
+    // 3. Set a new layer for the object and its children with SwitchLayer
+    // 4. Restore the object's layers with RestoreObjectLayers
     public class LayerSwitcher : MonoBehaviour
     {
-        private GameObject _currentObject;
-        private readonly Dictionary<GameObject, int> _originalLayers = new();
+        [SerializeField] private LayerMask _layerMask;
+        private Transform _currentObject;
+        private readonly Dictionary<Transform, int> _originalLayers = new();
+
+        public LayerMask LayerMask => _layerMask;
 
         public void RecordObject(GameObject obj)
         {
+            if (obj == null)
+                return;
+
             if (_currentObject != null)
                 ClearObject();
 
-            _currentObject = obj;
-            _originalLayers.Add(obj, obj.layer);
-
-            Transform objTransform = obj.transform;
-            int childCount = objTransform.childCount;
-
-            for (int i = 0; i < childCount; i++)
-            {
-                GameObject child = objTransform.GetChild(i).gameObject;
-
-                _originalLayers.Add(child, child.layer);
-            }
+            _currentObject = obj.transform;
+            RecordObjectAndChildren(_currentObject);
         }
 
-        public void SwitchLayer(LayerMask mask) => SwitchLayer(mask.ToLayer());
-
-        public void SwitchLayer(int layer)
+        private void RecordObjectAndChildren(Transform obj)
         {
-            _currentObject.layer = layer;
+            _originalLayers.Add(obj, obj.gameObject.layer);
 
-            Transform objTransform = _currentObject.transform;
-            int childCount = objTransform.childCount;
+            int childCount = obj.childCount;
 
             for (int i = 0; i < childCount; i++)
-            {
-                GameObject child = objTransform.GetChild(i).gameObject;
-                child.layer = layer;
-            }
+                RecordObjectAndChildren(obj.GetChild(i));
+        }
+
+        public void SwitchLayer() => SwitchLayersWithChildren(_currentObject, LayerMask.ToLayer());
+
+        private void SwitchLayersWithChildren(Transform obj, int layer)
+        {
+            obj.gameObject.layer = layer;
+
+            int childCount = obj.childCount;
+
+            for (int i = 0; i < childCount; i++)
+                SwitchLayersWithChildren(obj.GetChild(i), layer);
         }
 
         public void RestoreObjectLayers()
         {
-            GameObject[] objects = _originalLayers.Keys.ToArray();
+            Transform[] objects = _originalLayers.Keys.ToArray();
             int[] layers = _originalLayers.Values.ToArray();
 
             for (int i = 0; i < objects.Length; i++)
             {
-                objects[i].layer = layers[i];
+                objects[i].gameObject.layer = layers[i];
             }
         }
 

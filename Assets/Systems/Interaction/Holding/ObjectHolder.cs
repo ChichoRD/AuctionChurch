@@ -8,18 +8,11 @@ namespace AuctionChurch.Interaction.Holding
     public class ObjectHolder : MonoBehaviour
     {
         [SerializeField] private InputActionReference _dropInput;
-
-        [Header("References")]
-        [SerializeField] private Transform _objectParent;
-        [SerializeField] private ObjectPlacer _objectPlacer;
+        [SerializeField] private Transform _holdingParent;
         private Transform _previousParent;
 
-        [Header("Layers")]
-        [SerializeField] private LayerMask _heldLayerMask;
-        [SerializeField] private LayerSwitcher _layerSwitcher;
-
-        public Action OnHold;
-        public Action OnRelease;
+        public Action<HoldableObject> OnHold { get; set; }
+        public Action<HoldableObject> OnRelease { get; set; }
         public HoldableObject HeldObject { get; private set; }
 
         private void OnEnable()
@@ -41,10 +34,11 @@ namespace AuctionChurch.Interaction.Holding
 
             HeldObject = obj;
 
-            RecordObject();
-            UpdateObject();
+            _previousParent = HeldObject.transform.parent;
+            HeldObject.transform.parent = _holdingParent;
+            HeldObject.Hold();
 
-            OnHold?.Invoke();
+            OnHold?.Invoke(obj);
         }
 
         private void Release(InputAction.CallbackContext ctx) => Release();
@@ -53,34 +47,10 @@ namespace AuctionChurch.Interaction.Holding
             if (HeldObject == null)
                 return;
 
-            _layerSwitcher.RestoreObjectLayers();
-            _layerSwitcher.ClearObject();
-
-            ResolveReleasePosition();
+            HeldObject.transform.parent = _previousParent;
+            OnRelease?.Invoke(HeldObject);
             HeldObject.Release();
             HeldObject = null;
-
-            OnRelease?.Invoke();
-        }
-
-        private void UpdateObject()
-        {
-            _layerSwitcher.SwitchLayer(_heldLayerMask);
-            HeldObject.transform.parent = _objectParent;
-            HeldObject.Hold();
-        }
-
-        private void RecordObject()
-        {
-            _previousParent = HeldObject.transform.parent;
-            _layerSwitcher.RecordObject(HeldObject.gameObject);
-        }
-
-        private void ResolveReleasePosition()
-        {
-            HeldObject.transform.parent = _previousParent;
-            HeldObject.transform.rotation = Quaternion.identity;
-            _objectPlacer.PlaceObject(HeldObject.transform);
         }
     }
 }
