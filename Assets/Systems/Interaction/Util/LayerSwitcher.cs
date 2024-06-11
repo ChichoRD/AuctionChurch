@@ -56,13 +56,8 @@ namespace AuctionChurch.UtilComponents.Physics
 
         public void RestoreObjectLayers()
         {
-            Transform[] objects = _originalLayers.Keys.ToArray();
-            int[] layers = _originalLayers.Values.ToArray();
-
-            for (int i = 0; i < objects.Length; i++)
-            {
-                objects[i].gameObject.layer = layers[i];
-            }
+            foreach (KeyValuePair<Transform, int> transformLayerPair in _originalLayers)
+                transformLayerPair.Key.gameObject.layer = transformLayerPair.Value;
         }
 
         public void ClearObject()

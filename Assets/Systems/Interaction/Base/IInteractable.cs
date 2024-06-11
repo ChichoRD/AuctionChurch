@@ -38,10 +38,11 @@ namespace AuctionChurch.Interaction
 
             public void Interact<T>(T interactable) where T : IInteractable
             {
-                IInteractor<T> i = _specificInteractor as IInteractor<T>;
-
-                OnInteract?.Invoke(interactable);
-                i?.Interact(interactable);
+                if (_specificInteractor is IInteractor<T> specificInteractor)
+                {
+                    specificInteractor.Interact(interactable);
+                    OnInteract?.Invoke(interactable);
+                }
             }
         }
 
