@@ -25,8 +25,6 @@ namespace AuctionChurch.Interaction
 
         private void RaiseEvents()
         {
-            Debug.Log("raise events");
-
             _event.Invoke();
         }
     }

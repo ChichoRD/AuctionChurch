@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace AuctionChurch.Interaction
 {
-    public class PlayerInteractor : Interactor, IInteractor<HoldableObject>
+    public class HoldableObjectInteractor : Interactor, IInteractor<HoldableObject>
     {
         [Header("References")]
         [SerializeField] private InputActionReference _interactionInput;
