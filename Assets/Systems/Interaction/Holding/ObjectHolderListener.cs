@@ -25,14 +25,8 @@ namespace AuctionChurch.Interaction.Holding
             _holder.OnRelease -= OnRelease;
         }
 
-        private void OnHold(HoldableObject obj)
-        {
-            _gameObjectOnHold.Invoke(obj.gameObject);
-        }
+        private void OnHold(HoldableObject obj) => _gameObjectOnHold.Invoke(obj.gameObject);
 
-        private void OnRelease(HoldableObject obj)
-        {
-            _gameObjectOnRelease.Invoke(obj.gameObject);
-        }
+        private void OnRelease(HoldableObject obj) => _gameObjectOnRelease.Invoke(obj.gameObject);
     }
 }

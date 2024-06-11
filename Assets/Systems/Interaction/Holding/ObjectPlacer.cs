@@ -8,6 +8,7 @@ namespace AuctionChurch.Interaction.Holding
 {
     public class ObjectPlacer : MonoBehaviour
     {
+        [Header("Placing")]
         [SerializeField] private bool _drawGizmos = true;
         [SerializeField] private float _placementRange;
 
@@ -17,7 +18,6 @@ namespace AuctionChurch.Interaction.Holding
         public void PlaceObject(GameObject obj)
         {
             obj.transform.position = GetPlacementPosition(obj.transform);
-            obj.transform.rotation = Quaternion.identity;
         }
 
         private Vector3 GetPlacementPosition(Transform obj)
@@ -30,10 +30,11 @@ namespace AuctionChurch.Interaction.Holding
             if (hit.transform == null)
             {
                 OnDrop?.Invoke();
-                return obj.transform.position;
+                return obj.position;
             }
 
             OnPlace?.Invoke();
+            obj.transform.rotation = Quaternion.identity;
             return GetPositionOutsideColliders(obj, hit);
         }
 

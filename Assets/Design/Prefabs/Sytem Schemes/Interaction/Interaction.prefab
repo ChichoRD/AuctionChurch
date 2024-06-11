@@ -313,13 +313,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7372470734997889956}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+          Interaction
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grab
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7372470734997889956}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+          Interaction
+        m_MethodName: SetBoolTrue
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isHolding
+          m_BoolArgument: 0
+        m_CallState: 2
   _gameObjectOnRelease:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6294466499549672271}
         m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Physics.LayerSwitcher,
           Interaction
-        m_MethodName: RestoreObjectLayers
+        m_MethodName: RestoreAndClearObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -327,6 +353,19 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7372470734997889956}
+        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+          Interaction
+        m_MethodName: SetBoolFalse
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isHolding
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 888809953513055592}
@@ -339,20 +378,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6294466499549672271}
-        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Physics.LayerSwitcher,
-          Interaction
-        m_MethodName: ClearObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: isHolding
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &7788169900852382573
@@ -364,6 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3213633392026284778}
+  - component: {fileID: 5594356675246611498}
   - component: {fileID: 7115170857383310110}
   - component: {fileID: 8477101162373286020}
   - component: {fileID: 888809953513055592}
@@ -392,6 +419,37 @@ Transform:
   m_Father: {fileID: 2035268733052112965}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5594356675246611498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788169900852382573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d624dfbf1b5be49b4b6b2e0e446884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputActionReference: {fileID: 4344467740125944566, guid: 1e99aa7ee60adc54a96bddff415dca27,
+    type: 3}
+  _inputPhase: 1
+  _inputEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7115170857383310110}
+        m_TargetAssemblyTypeName: AuctionChurch.Interaction.Holding.ObjectHolder,
+          Interaction
+        m_MethodName: Release
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7115170857383310110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,8 +462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c922a4bc7105f345b6f063ba73d572e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropInput: {fileID: 4344467740125944566, guid: 1e99aa7ee60adc54a96bddff415dca27,
-    type: 3}
   _holdingParent: {fileID: 0}
 --- !u!114 &8477101162373286020
 MonoBehaviour:
@@ -495,32 +551,6 @@ MonoBehaviour:
           m_StringArgument: grab
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7372470734997889956}
-        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
-          Interaction
-        m_MethodName: SetBoolFalse
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: isHolding
-          m_BoolArgument: 0
-        m_CallState: 2
   _onDropEvents:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7372470734997889956}
-        m_TargetAssemblyTypeName: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
-          Interaction
-        m_MethodName: SetBoolFalse
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: isHolding
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
