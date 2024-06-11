@@ -53,16 +53,5 @@ namespace AuctionChurch.Interaction.Holding
             HeldObject.Release();
             HeldObject = null;
         }
-
-        public void RemoveObject()
-        {
-            if (HeldObject == null)
-                return;
-
-            HeldObject.transform.parent = _previousParent;
-            OnObjectRemoved?.Invoke();
-            HeldObject.Release();
-            HeldObject = null;
-        }
     }
 }

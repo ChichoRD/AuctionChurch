@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace AuctionChurch.Interaction.Holding
 {
@@ -8,6 +10,9 @@ namespace AuctionChurch.Interaction.Holding
     {
         [SerializeField] private bool _drawGizmos = true;
         [SerializeField] private float _placementRange;
+
+        public Action OnPlace { get; set; }
+        public Action OnDrop { get; set; }
 
         public void PlaceObject(GameObject obj)
         {
@@ -23,8 +28,12 @@ namespace AuctionChurch.Interaction.Holding
             Physics.Raycast(ray, out RaycastHit hit, _placementRange);
 
             if (hit.transform == null)
-                return cam.transform.position + ray.direction * _placementRange;
+            {
+                OnDrop?.Invoke();
+                return obj.transform.position;
+            }
 
+            OnPlace?.Invoke();
             return GetPositionOutsideColliders(obj, hit);
         }
 
