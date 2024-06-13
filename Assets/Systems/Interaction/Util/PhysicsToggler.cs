@@ -14,8 +14,8 @@ namespace AuctionChurch.UtilComponents.Physics
         {
             Transform highestParent = transform;
 
-            while (transform.parent != null)
-                highestParent = transform.parent;
+            while (highestParent.parent != null)
+                highestParent = highestParent.parent;
 
             _rigidBodies = highestParent.GetComponentsInChildren<Rigidbody>();
             _colliders = highestParent.GetComponentsInChildren<Collider>();

@@ -6,8 +6,9 @@ namespace AuctionChurch.Interaction.Doors
 {
     public class Door : MonoBehaviour, IInteractable
     {
-        [Header("Anchor")]
+        [Header("References")]
         [SerializeField] private Transform _anchor;
+        [SerializeField] private Collider[] _doorColliders;
 
         [Header("Positioning")]
         [SerializeField] private float _openingTime = 0.5f;
@@ -37,11 +38,10 @@ namespace AuctionChurch.Interaction.Doors
         private IEnumerator IELerpPositionAndRotation(Quaternion targetRot)
         {
             _isOpening = true;
+            ToggleColliders(false);
 
             float elapsedTime = 0;
             Quaternion startRot = _anchor.localRotation;
-
-            Debug.Log("start rotation: " + startRot.eulerAngles);
 
             while (elapsedTime < _openingTime)
             {
@@ -54,6 +54,13 @@ namespace AuctionChurch.Interaction.Doors
             }
 
             _isOpening = false;
+            ToggleColliders(true);
+        }
+
+        private void ToggleColliders(bool enabled)
+        {
+            for (int i = 0; i < _doorColliders.Length; i++)
+                _doorColliders[i].enabled = enabled;
         }
     }
 }

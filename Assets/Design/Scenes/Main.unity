@@ -853,6 +853,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Bundle
       objectReference: {fileID: 0}
+    - target: {fileID: 5837686008816372870, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5837686008816372871, guid: 2a291b349826af54ea49fe241fd72b13,
         type: 3}
       propertyPath: m_RootOrder
@@ -912,6 +917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837686008882716045, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5837686008882716047, guid: 2a291b349826af54ea49fe241fd72b13,
         type: 3}
