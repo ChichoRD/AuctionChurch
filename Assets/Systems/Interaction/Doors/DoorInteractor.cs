@@ -1,15 +1,13 @@
 using AuctionChurch.Interaction.Detection;
-using AuctionChurch.Interaction.Holding;
+using AuctionChurch.Interaction.Doors;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace AuctionChurch.Interaction.Interactors
 {
-    public class HoldableObjectInteractor : Interactor, IInteractor<HoldableObject>
+    public class DoorInteractor : Interactor, IInteractor<Door>
     {
-        [Header("References")]
         [SerializeField] private InteractionDetector _detector;
-        [SerializeField] private ObjectHolder _objectHolder;
 
         public void TryInteract()
         {
@@ -22,9 +20,9 @@ namespace AuctionChurch.Interaction.Interactors
                 Interact(interactables[i]);
         }
 
-        public void Interact(HoldableObject interactable)
+        public void Interact(Door door)
         {
-            _objectHolder.Hold(interactable);
+            door.ToggleOpen();
         }
     }
 }
