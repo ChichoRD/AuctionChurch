@@ -54,6 +54,12 @@ namespace AuctionChurch.UtilComponents.Physics
                 SwitchLayersWithChildren(obj.GetChild(i), layer);
         }
 
+        public void RestoreAndClearObject()
+        {
+            RestoreObjectLayers();
+            ClearObject();
+        }
+
         public void RestoreObjectLayers()
         {
             foreach (KeyValuePair<Transform, int> transformLayerPair in _originalLayers)

@@ -1,18 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace AuctionChurch.Interaction.Holding
 {
     public class ObjectPlacer : MonoBehaviour
     {
+        [Header("Placing")]
         [SerializeField] private bool _drawGizmos = true;
         [SerializeField] private float _placementRange;
+
+        public Action OnPlace { get; set; }
+        public Action OnDrop { get; set; }
 
         public void PlaceObject(GameObject obj)
         {
             obj.transform.position = GetPlacementPosition(obj.transform);
-            obj.transform.rotation = Quaternion.identity;
         }
 
         private Vector3 GetPlacementPosition(Transform obj)
@@ -23,8 +28,13 @@ namespace AuctionChurch.Interaction.Holding
             Physics.Raycast(ray, out RaycastHit hit, _placementRange);
 
             if (hit.transform == null)
-                return cam.transform.position + ray.direction * _placementRange;
+            {
+                OnDrop?.Invoke();
+                return obj.position;
+            }
 
+            OnPlace?.Invoke();
+            obj.transform.rotation = Quaternion.identity;
             return GetPositionOutsideColliders(obj, hit);
         }
 

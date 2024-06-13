@@ -1909,6 +1909,83 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 118485821278091689, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: m_Name
+      value: Layer Switcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onDropEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onPlaceEvents.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onDropEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1918611268}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onPlaceEvents.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1918611268}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onDropEvents.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onDropEvents.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetBoolFalse
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onPlaceEvents.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onPlaceEvents.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetBoolFalse
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onDropEvents.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+        Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onPlaceEvents.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
+        Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onDropEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: isHolding
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onPlaceEvents.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
+      value: isHolding
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onDropEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273849104845507956, guid: 2a291b349826af54ea49fe241fd72b13,
+        type: 3}
+      propertyPath: _onPlaceEvents.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5837686008419589185, guid: 2a291b349826af54ea49fe241fd72b13,
         type: 3}
       propertyPath: _transformation
@@ -1984,47 +2061,6 @@ PrefabInstance:
       propertyPath: _holdingParent
       value: 
       objectReference: {fileID: 452696040}
-    - target: {fileID: 7292358691541148369, guid: 2a291b349826af54ea49fe241fd72b13,
-        type: 3}
-      propertyPath: _onObjectRemoved.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292358691541148369, guid: 2a291b349826af54ea49fe241fd72b13,
-        type: 3}
-      propertyPath: _onObjectRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292358691541148369, guid: 2a291b349826af54ea49fe241fd72b13,
-        type: 3}
-      propertyPath: _onObjectRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1918611268}
-    - target: {fileID: 7292358691541148369, guid: 2a291b349826af54ea49fe241fd72b13,
-        type: 3}
-      propertyPath: _onObjectRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292358691541148369, guid: 2a291b349826af54ea49fe241fd72b13,
-        type: 3}
-      propertyPath: _onObjectRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetBoolFalse
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292358691541148369, guid: 2a291b349826af54ea49fe241fd72b13,
-        type: 3}
-      propertyPath: _onObjectRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AuctionChurch.UtilComponents.Animation.AnimationParameterEventHandler,
-        Interaction
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292358691541148369, guid: 2a291b349826af54ea49fe241fd72b13,
-        type: 3}
-      propertyPath: _onObjectRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: isHolding
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292358691541148369, guid: 2a291b349826af54ea49fe241fd72b13,
-        type: 3}
-      propertyPath: _onObjectRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7387973665398383341, guid: 2a291b349826af54ea49fe241fd72b13,
         type: 3}
       propertyPath: _animator
@@ -2032,65 +2068,6 @@ PrefabInstance:
       objectReference: {fileID: 452696042}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a291b349826af54ea49fe241fd72b13, type: 3}
---- !u!114 &5837686008657826865 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7091260416949154391, guid: 2a291b349826af54ea49fe241fd72b13,
-    type: 3}
-  m_PrefabInstance: {fileID: 5837686008657826864}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c922a4bc7105f345b6f063ba73d572e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &5837686008657826866 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2083380833699631375, guid: 2a291b349826af54ea49fe241fd72b13,
-    type: 3}
-  m_PrefabInstance: {fileID: 5837686008657826864}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5837686008657826867 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648769964850302727, guid: 2a291b349826af54ea49fe241fd72b13,
-    type: 3}
-  m_PrefabInstance: {fileID: 5837686008657826864}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5837686008657826866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec53362a9c746974c82ae30c3d623e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5837686008657826868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5837686008657826866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 038958d769ec9ed4da8598d7a335243b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactor: {fileID: 5837686008657826867}
-  _event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5837686008657826865}
-        m_TargetAssemblyTypeName: AuctionChurch.Interaction.Holding.ObjectHolder,
-          Interaction
-        m_MethodName: RemoveObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &7027254169490300384
 PrefabInstance:
   m_ObjectHideFlags: 0
