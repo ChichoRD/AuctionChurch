@@ -1,7 +1,5 @@
-using AuctionChurch.UtilComponents.Physics;
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace AuctionChurch.Interaction.Holding
 {
@@ -33,11 +31,16 @@ namespace AuctionChurch.Interaction.Holding
             if (HeldObject == null)
                 return;
 
-            HeldObject.transform.parent = _previousParent;
+            RevertObject();
 
-            HeldObject.Release();
             OnRelease?.Invoke(HeldObject);
             HeldObject = null;
+        }
+
+        private void RevertObject()
+        {
+            HeldObject.transform.parent = _previousParent;
+            HeldObject.Release();
         }
     }
 }

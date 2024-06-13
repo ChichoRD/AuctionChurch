@@ -8,6 +8,9 @@ namespace AuctionChurch.Interaction.Holding
 {
     public class ObjectPlacer : MonoBehaviour
     {
+        [Header("Holder")]
+        [SerializeField] private ObjectHolder _holder;
+
         [Header("Placing")]
         [SerializeField] private bool _drawGizmos = true;
         [SerializeField] private float _placementRange;
@@ -15,8 +18,18 @@ namespace AuctionChurch.Interaction.Holding
         public Action OnPlace { get; set; }
         public Action OnDrop { get; set; }
 
+        public void PlaceHeldObject()
+        {
+            GameObject heldObj = _holder.HeldObject.gameObject;
+
+            _holder.Release();
+            PlaceObject(heldObj);
+        }
+
         public void PlaceObject(GameObject obj)
         {
+            if (obj == null) return;
+
             obj.transform.position = GetPlacementPosition(obj.transform);
         }
 

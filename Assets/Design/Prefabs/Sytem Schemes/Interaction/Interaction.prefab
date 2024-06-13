@@ -457,19 +457,6 @@ MonoBehaviour:
           m_StringArgument: isHolding
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 888809953513055592}
-        m_TargetAssemblyTypeName: AuctionChurch.Interaction.Holding.ObjectPlacer,
-          Interaction
-        m_MethodName: PlaceObject
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: isHolding
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &7788169900852382573
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,10 +513,10 @@ MonoBehaviour:
   _inputEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7115170857383310110}
-        m_TargetAssemblyTypeName: AuctionChurch.Interaction.Holding.ObjectHolder,
+      - m_Target: {fileID: 888809953513055592}
+        m_TargetAssemblyTypeName: AuctionChurch.Interaction.Holding.ObjectPlacer,
           Interaction
-        m_MethodName: Release
+        m_MethodName: PlaceHeldObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -577,6 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c2a2733cd99d74d8fd8fd7d8ed9916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _holder: {fileID: 0}
   _drawGizmos: 1
   _placementRange: 3
 --- !u!1 &8104461963211078359
