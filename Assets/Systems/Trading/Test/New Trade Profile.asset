@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e630d2f2f34fa264f87e358d8b4116e0, type: 3}
+  m_Name: New Trade Profile
+  m_EditorClassIdentifier: 
+  _tradeInterests:
+  - {fileID: 11400000, guid: 9431b4234fca2d747b4ea4959361bc2f, type: 2}
+  - {fileID: 11400000, guid: eae6723d2fa5b334e8cb3f800baa7f05, type: 2}
+  - {fileID: 11400000, guid: 14855e6c5923f6a42912b8e51daf2cf4, type: 2}
