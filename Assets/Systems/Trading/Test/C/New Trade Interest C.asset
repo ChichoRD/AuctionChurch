@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ed85e27c17fa4479f5d0a64f1f21d1, type: 3}
   m_Name: New Trade Interest C
   m_EditorClassIdentifier: 
-  _buyingGood: {fileID: 11400000, guid: fd2af8c59ff706b44bec60ec5038d690, type: 2}
+  _buyingGood:
+    _good: {fileID: 11400000, guid: a07f8d9b3497c614195a87dc98eecad8, type: 2}
+    _qualitativeInterest: {fileID: 11400000, guid: de47b800c32a0424f999a96d5dfe0609,
+      type: 2}
+    _quantitativeInterest: {fileID: 11400000, guid: a18ffb47c7cc7304784d047732537528,
+      type: 2}
   _sellingGoods:
-  - {fileID: 11400000, guid: e2cbe2b3879895b409b185b164febf9e, type: 2}
-  - {fileID: 11400000, guid: 56bff2d64dcd1244282656f1333c02e6, type: 2}
+  - _good: {fileID: 11400000, guid: e46e466fd9ec20b46a623c46756d5ae6, type: 2}
+    _qualitativeInterest: {fileID: 11400000, guid: de47b800c32a0424f999a96d5dfe0609,
+      type: 2}
+    _quantitativeInterest: {fileID: 11400000, guid: a18ffb47c7cc7304784d047732537528,
+      type: 2}
+  - _good: {fileID: 11400000, guid: 1ccbb8bf9bddece43a5ebf3b51d6c42f, type: 2}
+    _qualitativeInterest: {fileID: 11400000, guid: de47b800c32a0424f999a96d5dfe0609,
+      type: 2}
+    _quantitativeInterest: {fileID: 11400000, guid: a18ffb47c7cc7304784d047732537528,
+      type: 2}

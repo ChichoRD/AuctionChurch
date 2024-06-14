@@ -1,11 +1,12 @@
-﻿using TradingSystem.Interest.Qualitative;
+﻿using System;
+using TradingSystem.Interest.Qualitative;
 using TradingSystem.Interest.Quantitative;
 using UnityEngine;
 
 namespace TradingSystem.Interest
 {
-    [CreateAssetMenu(fileName = "New Good Interest", menuName = "Trading System/Interest/Good Interest Flyweight")]
-    internal class GoodInterestFlyweight : ScriptableObject
+    [Serializable]
+    internal struct GoodInterestBuilder
     {
         [SerializeField]
         private Good _good;
@@ -16,7 +17,14 @@ namespace TradingSystem.Interest
         [SerializeField]
         private QuantitativeInterestFlyweight _quantitativeInterest;
 
-        public GoodInterest Create() =>
+        public GoodInterestBuilder(Good good, QualitativeInterestFlyweight qualitativeInterest, QuantitativeInterestFlyweight quantitativeInterest)
+        {
+            _good = good;
+            _qualitativeInterest = qualitativeInterest;
+            _quantitativeInterest = quantitativeInterest;
+        }
+
+        public readonly GoodInterest Build() =>
             new GoodInterest(_good, _qualitativeInterest.Create(), _quantitativeInterest.Create());
     }
 }

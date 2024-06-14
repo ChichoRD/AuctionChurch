@@ -6,12 +6,12 @@ namespace TradingSystem.Interest
     internal class TradeInterestFlyweight : ScriptableObject
     {
         [SerializeField]
-        private GoodInterestFlyweight _buyingGood;
+        private GoodInterestBuilder _buyingGood;
 
         [SerializeField]
-        private GoodInterestFlyweight[] _sellingGoods;
+        private GoodInterestBuilder[] _sellingGoods;
 
         public TradeInterest Create() =>
-            new TradeInterest(_buyingGood.Create(), System.Array.ConvertAll(_sellingGoods, x => x.Create()));
+            new TradeInterest(_buyingGood.Build(), System.Array.ConvertAll(_sellingGoods, x => x.Build()));
     }
 }
