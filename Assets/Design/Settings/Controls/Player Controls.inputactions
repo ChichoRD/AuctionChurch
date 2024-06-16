@@ -168,6 +168,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Parchment Action Map",
+            "id": "7154607f-3054-44d2-aa86-f74c1b51b6cf",
+            "actions": [
+                {
+                    "name": "Hold",
+                    "type": "Button",
+                    "id": "99db252e-096c-4032-ac2b-5fdd312754ca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6ee692ac-6189-4ec5-a214-7a33c08f40c1",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

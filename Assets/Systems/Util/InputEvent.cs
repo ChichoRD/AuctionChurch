@@ -12,7 +12,7 @@ namespace AuctionChurch.UtilComponents.Input
 
         [Header("Input")]
         [SerializeField] private InputActionReference _inputActionReference;
-        [SerializeField] private InputPhase _inputPhase;
+        [SerializeField] private InputPhase _inputPhase = InputPhase.Performed;
 
         [Header("Events")]
         [SerializeField] private UnityEvent _inputEvent;

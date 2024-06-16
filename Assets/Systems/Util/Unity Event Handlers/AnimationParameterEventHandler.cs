@@ -18,6 +18,14 @@ namespace AuctionChurch.UtilComponents.Animation
             _animator.SetBool(parameterName, false);
         }
 
+        public void ToggleBool(string parameterName)
+        {
+            int hash = Animator.StringToHash(parameterName);
+            bool current = _animator.GetBool(hash);
+
+            _animator.SetBool(hash, !current);
+        }
+
         public void SetTrigger(string parameterName)
         {
             _animator.SetTrigger(parameterName);

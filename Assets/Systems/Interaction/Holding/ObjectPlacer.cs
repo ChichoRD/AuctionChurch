@@ -20,10 +20,15 @@ namespace AuctionChurch.Interaction.Holding
 
         public void PlaceHeldObject()
         {
-            GameObject heldObj = _holder.HeldObject.gameObject;
+            HoldableObject heldObj = _holder.HeldObject;
+
+            if (heldObj == null)
+                return;
+
+            GameObject gameObj = heldObj.gameObject;
 
             _holder.Release();
-            PlaceObject(heldObj);
+            PlaceObject(gameObj);
         }
 
         public void PlaceObject(GameObject obj)
