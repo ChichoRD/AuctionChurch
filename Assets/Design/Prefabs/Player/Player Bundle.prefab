@@ -58,6 +58,11 @@ PrefabInstance:
       propertyPath: _isHoldingAnimationParameter
       value: isHolding
       objectReference: {fileID: 0}
+    - target: {fileID: 2111438282945825259, guid: b59d9e0cceeef1e41b090c6c372c7dd6,
+        type: 3}
+      propertyPath: m_Name
+      value: Layer Switcher
+      objectReference: {fileID: 0}
     - target: {fileID: 4660252383600099141, guid: b59d9e0cceeef1e41b090c6c372c7dd6,
         type: 3}
       propertyPath: _detector

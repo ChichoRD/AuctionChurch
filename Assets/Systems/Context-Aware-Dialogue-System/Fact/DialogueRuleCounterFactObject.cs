@@ -37,5 +37,7 @@ namespace ContextualDialogueSystem.Fact
 
             return Task.FromResult(true);
         }
+
+        public void Handle(IDialogueRule<object, ICriteria> dialogueRule) => HandleRule(dialogueRule);
     }
 }

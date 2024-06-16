@@ -17,10 +17,10 @@ namespace ContextualDialogueSystem.RuleHandler
         private IDialogueRuleHandler _eventDialogueHandler;
 
         [field: SerializeField]
-        public UnityEvent DialogueHandlingStarted { get; private set; }
+        public UnityEvent<IDialogueRule<object, ICriteria>> DialogueHandlingStarted { get; private set; }
 
         [field: SerializeField]
-        public UnityEvent DialogueHandlingFinished { get; private set; }
+        public UnityEvent<IDialogueRule<object, ICriteria>> DialogueHandlingFinished { get; private set; }
 
         private void Awake()
         {
@@ -29,9 +29,9 @@ namespace ContextualDialogueSystem.RuleHandler
 
         public async Task<bool> HandleRule(IDialogueRule<object, ICriteria> dialogueRule)
         {
-            DialogueHandlingStarted?.Invoke();
+            DialogueHandlingStarted?.Invoke(dialogueRule);
             await _eventDialogueHandler.HandleRule(dialogueRule);
-            DialogueHandlingFinished?.Invoke();
+            DialogueHandlingFinished?.Invoke(dialogueRule);
             return true;
         }
     }
