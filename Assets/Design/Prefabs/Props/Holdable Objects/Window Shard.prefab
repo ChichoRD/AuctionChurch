@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 3073827087722630754, guid: 2175d3030c82ba94e9dfbea184727ce2,
         type: 3}
       propertyPath: _positionOffset.x
-      value: 0.106
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 3073827087722630754, guid: 2175d3030c82ba94e9dfbea184727ce2,
         type: 3}
@@ -25,12 +25,17 @@ PrefabInstance:
     - target: {fileID: 3073827087722630754, guid: 2175d3030c82ba94e9dfbea184727ce2,
         type: 3}
       propertyPath: _positionOffset.z
-      value: 0.04
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3073827087722630754, guid: 2175d3030c82ba94e9dfbea184727ce2,
         type: 3}
       propertyPath: _rotationOffset.y
-      value: 90
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073827087722630754, guid: 2175d3030c82ba94e9dfbea184727ce2,
+        type: 3}
+      propertyPath: _rotationOffset.z
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4888901905451445216, guid: 2175d3030c82ba94e9dfbea184727ce2,
         type: 3}
