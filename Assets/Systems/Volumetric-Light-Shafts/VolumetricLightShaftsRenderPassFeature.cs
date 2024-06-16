@@ -54,7 +54,7 @@ public class VolumetricLightShaftsRenderPassFeature : ScriptableRendererFeature
             _lightShaftsMaterial.SetFloat(s_jitterFactorID, _settings.jitterFactor);
 
             Camera camera = renderingData.cameraData.camera;
-            Vector3 sunDirectionWS = RenderSettings.sun.transform.forward;
+            Vector3 sunDirectionWS = RenderSettings.sun != null ? RenderSettings.sun.transform.forward : Vector3.zero;
             Vector3 cameraPositionWS = camera.transform.position;
             Vector3 sunPositionWS = cameraPositionWS + sunDirectionWS;
             Vector3 sunPositionUV = camera.WorldToViewportPoint(sunPositionWS);
