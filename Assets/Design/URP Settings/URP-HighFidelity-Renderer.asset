@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: FPSViewTransparentsAllDepth
-    Event: 300
+    Event: 450
     filterSettings:
       RenderQueueType: 1
       LayerMask:
@@ -253,7 +253,7 @@ MonoBehaviour:
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
-    overrideDepthState: 1
+    overrideDepthState: 0
     depthCompareFunction: 8
     enableWrite: 1
     stencilSettings:
