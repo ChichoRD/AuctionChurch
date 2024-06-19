@@ -1,3 +1,4 @@
+using TradingSystem.Distribution;
 using UnityEngine;
 
 namespace TradingSystem.Interest.Quantitative
@@ -6,22 +7,9 @@ namespace TradingSystem.Interest.Quantitative
     internal class QuantitativeInterestFlyweight : ScriptableObject
     {
         [SerializeField]
-        private QuantitativeInterestParameters.Builder _interestParameters;
+        private ProbabilityDensityFunctionSampler.Builder _interestParameters;
 
-        public QuantitativeInterest Create()
-        {
-            QuantitativeInterestParameters parameters = _interestParameters.Build();
-            float[] cumulativeInterests = new float[parameters.maximumQuantity - parameters.minimumQuantity + 1];
-            float cummulated = 0.0f;
-            for (int i = 0; i < cumulativeInterests.Length; i++)
-            {
-                float t = Mathf.InverseLerp(parameters.minimumQuantity, parameters.maximumQuantity, parameters.minimumQuantity + i);
-
-                cummulated += parameters.interestCurve.Evaluate(t);
-                cumulativeInterests[i] = cummulated;
-            }
-
-            return new QuantitativeInterest(parameters.minimumQuantity, cumulativeInterests);
-        }
+        public QuantitativeInterest Create() =>
+            new QuantitativeInterest(_interestParameters.Build());
     }
 }

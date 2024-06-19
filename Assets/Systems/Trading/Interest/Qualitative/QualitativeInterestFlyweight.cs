@@ -1,3 +1,4 @@
+using TradingSystem.Distribution;
 using UnityEngine;
 
 namespace TradingSystem.Interest.Qualitative
@@ -6,12 +7,9 @@ namespace TradingSystem.Interest.Qualitative
     internal class QualitativeInterestFlyweight : ScriptableObject
     {
         [SerializeField]
-        private QualitativeInterestParameters.Builder _interestParameters;
+        private ProbabilityDensityFunctionSampler.Builder _interestParameters;
 
-        public QualitativeInterest Create()
-        {
-            QualitativeInterestParameters parameters = _interestParameters.Build();
-            return new QualitativeInterest(parameters.interest.Evaluate(UnityEngine.Random.value));
-        }
+        public QualitativeInterest Create() =>
+            new QualitativeInterest(_interestParameters.Build().RandomSample());
     }
 }
