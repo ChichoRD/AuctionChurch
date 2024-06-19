@@ -84,7 +84,8 @@ MonoBehaviour:
   - {fileID: 8609367491682562359}
   - {fileID: -3214573215296681723}
   - {fileID: 5321730519780391449}
-  m_RendererFeatureMap: adc0de57c6d2eee549c154e26ab31630c72c7d9787e33c0b37f1888a1e9e7a770589c135b18a63d3197add45b695da49
+  - {fileID: 3076641092973547061}
+  m_RendererFeatureMap: adc0de57c6d2eee549c154e26ab31630c72c7d9787e33c0b37f1888a1e9e7a770589c135b18a63d3197add45b695da4935ce0ef8c56cb22a
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -164,6 +165,45 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 86.8
+--- !u!114 &3076641092973547061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: FPSTextTransparents
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: FPSTextTransparents
+    Event: 500
+    filterSettings:
+      RenderQueueType: 1
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 256
+      PassNames: []
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 1
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &3465154234953285961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +284,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: FPSViewTransparentsAllDepth
-    Event: 450
+    Event: 300
     filterSettings:
       RenderQueueType: 1
       LayerMask:
@@ -253,12 +293,12 @@ MonoBehaviour:
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
-    overrideDepthState: 0
+    overrideDepthState: 1
     depthCompareFunction: 8
     enableWrite: 1
     stencilSettings:
       overrideStencilState: 0
-      stencilReference: 0
+      stencilReference: 1
       stencilCompareFunction: 8
       passOperation: 0
       failOperation: 0
