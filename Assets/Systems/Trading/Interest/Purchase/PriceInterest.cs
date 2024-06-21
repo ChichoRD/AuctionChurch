@@ -15,5 +15,10 @@ namespace TradingSystem.Interest
 
         public float GetSellingPrice() => basePrice * _qualitativeInterest.interest;
         public float GetQualitativeInterest() => _qualitativeInterest.interest;
+
+        override public string ToString()
+        {
+            return $"Base Price: {basePrice}, Qualitative Interest: {_qualitativeInterest}";
+        }
     }
 }

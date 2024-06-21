@@ -8,5 +8,10 @@
         {
             this.interest = interest;
         }
+
+        public override string ToString()
+        {
+            return $"Interest: {interest}";
+        }
     }
 }

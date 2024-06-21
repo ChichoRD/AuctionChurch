@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: New Trade Profile
   m_EditorClassIdentifier: 
   _tradeInterests:
-  - {fileID: 11400000, guid: 9431b4234fca2d747b4ea4959361bc2f, type: 2}
-  - {fileID: 11400000, guid: eae6723d2fa5b334e8cb3f800baa7f05, type: 2}
+  - {fileID: 11400000, guid: fe09caa9c82555f4c8f8e3f43e3a2ba7, type: 2}
+  - {fileID: 11400000, guid: 044b9aecfac871447930c36c23a053e5, type: 2}
   - {fileID: 11400000, guid: 14855e6c5923f6a42912b8e51daf2cf4, type: 2}
+  _purchaseInterests:
+  - {fileID: 11400000, guid: 74351df952c53434e92536ac276da117, type: 2}

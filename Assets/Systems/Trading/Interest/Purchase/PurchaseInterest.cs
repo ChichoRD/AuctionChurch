@@ -13,5 +13,10 @@
 
         public Purchase GetPurchase() =>
             new Purchase(new IncomingTrade(buyingGood.good, buyingGood.GetRandomItemQuantity()), _sellingPrice.GetSellingPrice());
+
+        public override string ToString()
+        {
+            return $"Buying Good: {buyingGood}, Selling Price: {_sellingPrice}";
+        }
     }
 }

@@ -7,9 +7,17 @@ namespace TradingSystem.Interest.Quantitative
     internal class QuantitativeInterestFlyweight : ScriptableObject
     {
         [SerializeField]
+        [Min(0)]
+        private int _minimumQuantity;
+
+        [SerializeField]
+        [Min(0)]
+        private int _maximumQuantity;
+
+        [SerializeField]
         private ProbabilityDensityFunctionSampler.Builder _interestParameters;
 
         public QuantitativeInterest Create() =>
-            new QuantitativeInterest(_interestParameters.Build());
+            new QuantitativeInterest(_minimumQuantity, _maximumQuantity, _interestParameters.Build());
     }
 }

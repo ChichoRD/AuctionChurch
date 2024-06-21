@@ -10,6 +10,6 @@ namespace TradingSystem.Interest.Qualitative
         private ProbabilityDensityFunctionSampler.Builder _interestParameters;
 
         public QualitativeInterest Create() =>
-            new QualitativeInterest(_interestParameters.Build().RandomSample());
+            new QualitativeInterest(_interestParameters.Build().NormalizedRandomSample());
     }
 }

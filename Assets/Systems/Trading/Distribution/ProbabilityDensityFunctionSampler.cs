@@ -56,6 +56,8 @@ namespace TradingSystem.Distribution
 
         public float RandomSample() => InverseTransformSample(UnityEngine.Random.value);
 
+        public float NormalizedRandomSample() => Mathf.InverseLerp(MinDistributionInput, MaxDistributionInput, RandomSample());
+
         private float MinDistributionInput => _densityCurve.keys[0].time;
 
         private float MaxDistributionInput => _densityCurve.keys[^1].time;
@@ -64,22 +66,14 @@ namespace TradingSystem.Distribution
         public struct Builder
         {
             [SerializeField]
-            private float _minValue;
-
-            [SerializeField]
-            private float _maxValue;
-
-            [SerializeField]
             private AnimationCurve _probabilityDensityCurve;
 
             [SerializeField]
             [Min(0)]
             private int _integrationSteps;
 
-            public Builder(float minValue, float maxValue, AnimationCurve probabilityDensityCurve, int integrationSteps)
+            public Builder(AnimationCurve probabilityDensityCurve, int integrationSteps)
             {
-                _minValue = minValue;
-                _maxValue = maxValue;
                 _probabilityDensityCurve = probabilityDensityCurve;
                 _integrationSteps = integrationSteps;
             }

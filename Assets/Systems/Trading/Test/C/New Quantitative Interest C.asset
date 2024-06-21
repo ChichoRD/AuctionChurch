@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1975055205f10d4e991ad133bd48ad0, type: 3}
-  m_Name: New Quantitative Interest
+  m_Name: New Quantitative Interest C
   m_EditorClassIdentifier: 
   _minimumQuantity: 0
   _maximumQuantity: 8
@@ -21,15 +21,6 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.7
-        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -37,13 +28,22 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: -6.8702555
-        outSlope: -6.8702555
+        time: 0.90000004
+        value: 0.1600082
+        inSlope: 0.5362922
+        outSlope: 0.5362922
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.11363625
+        inWeight: 0.18353707
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
