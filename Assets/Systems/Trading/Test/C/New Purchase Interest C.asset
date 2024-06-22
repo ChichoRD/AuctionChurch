@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2480c1243d2c22458ac14676813e016, type: 3}
+  m_Name: New Purchase Interest C
+  m_EditorClassIdentifier: 
+  _buyingGood:
+    _good: {fileID: 11400000, guid: a07f8d9b3497c614195a87dc98eecad8, type: 2}
+    _qualitativeInterest: {fileID: 11400000, guid: de47b800c32a0424f999a96d5dfe0609,
+      type: 2}
+    _quantitativeInterest: {fileID: 11400000, guid: 752745ea5091ae748a218bb217751661,
+      type: 2}
+  _sellingPrice:
+    _basePrice: 80
+    _qualitativeInterest: {fileID: 11400000, guid: bbe0d1880c66d114ba07887387ef89c2,
+      type: 2}

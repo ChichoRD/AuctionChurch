@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b240caebf2fb6024ebade1fa84b11b2f, type: 3}
+  m_Name: New Trade Interest C
+  m_EditorClassIdentifier: 
+  _buyingGood:
+    _good: {fileID: 11400000, guid: a07f8d9b3497c614195a87dc98eecad8, type: 2}
+    _qualitativeInterest: {fileID: 11400000, guid: de47b800c32a0424f999a96d5dfe0609,
+      type: 2}
+    _quantitativeInterest: {fileID: 11400000, guid: a18ffb47c7cc7304784d047732537528,
+      type: 2}
+  _sellingGoods:
+  - _good: {fileID: 11400000, guid: e46e466fd9ec20b46a623c46756d5ae6, type: 2}
+    _qualitativeInterest: {fileID: 11400000, guid: de47b800c32a0424f999a96d5dfe0609,
+      type: 2}
+    _quantitativeInterest: {fileID: 11400000, guid: a18ffb47c7cc7304784d047732537528,
+      type: 2}
+  - _good: {fileID: 11400000, guid: 1ccbb8bf9bddece43a5ebf3b51d6c42f, type: 2}
+    _qualitativeInterest: {fileID: 11400000, guid: de47b800c32a0424f999a96d5dfe0609,
+      type: 2}
+    _quantitativeInterest: {fileID: 11400000, guid: a18ffb47c7cc7304784d047732537528,
+      type: 2}
